@@ -22,6 +22,10 @@ namespace ShopAppDll.Configurations
             builder
                 .Property(g => g.UpdateDate)
                 .HasDefaultValueSql("getdate()");
+            builder.
+                Property(g => g.Image)
+                .IsRequired()
+                .HasMaxLength(255);
         }
     }
 }
