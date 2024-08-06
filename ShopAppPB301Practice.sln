@@ -5,6 +5,8 @@ VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopAppPB301Practice", "ShopAppPB301Practice\ShopAppPB301Practice.csproj", "{E1C675A3-317C-427D-863D-39B6AFC50EAE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopAppDll", "ShopAppDll\ShopAppDll.csproj", "{CED00002-7DA1-478A-982D-278E4E893F68}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{E1C675A3-317C-427D-863D-39B6AFC50EAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1C675A3-317C-427D-863D-39B6AFC50EAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1C675A3-317C-427D-863D-39B6AFC50EAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CED00002-7DA1-478A-982D-278E4E893F68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CED00002-7DA1-478A-982D-278E4E893F68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CED00002-7DA1-478A-982D-278E4E893F68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CED00002-7DA1-478A-982D-278E4E893F68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

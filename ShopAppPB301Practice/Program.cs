@@ -12,7 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ShopAppDbContext>(options =>
 {
-    options.UseSqlServer("");
+    options.UseSqlServer(config.GetConnectionString("DefaultConnection"));
 });
 
 var app = builder.Build();

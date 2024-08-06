@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ShopAppDll.Configurations;
 using ShopAppPB301Practice.Entities;
+using System.Reflection;
 
 namespace ShopAppPB301Practice.DAL
 {
@@ -9,6 +11,10 @@ namespace ShopAppPB301Practice.DAL
         public DbSet<Student>Students { get; set; }
         public ShopAppDbContext(DbContextOptions options) : base(options)
         {
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
     }
 }
