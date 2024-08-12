@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ShopAppPB301Practice.DAL;
 
@@ -11,9 +12,11 @@ using ShopAppPB301Practice.DAL;
 namespace ShopAppDll.Migrations
 {
     [DbContext(typeof(ShopAppDbContext))]
-    partial class ShopAppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240812095258_manyToManyTableAdded")]
+    partial class manyToManyTableAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
