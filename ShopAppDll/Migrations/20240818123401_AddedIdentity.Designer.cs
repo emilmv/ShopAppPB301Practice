@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ShopAppPB301Practice.DAL;
 
@@ -11,9 +12,11 @@ using ShopAppPB301Practice.DAL;
 namespace ShopAppDll.Migrations
 {
     [DbContext(typeof(ShopAppDbContext))]
-    partial class ShopAppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240818123401_AddedIdentity")]
+    partial class AddedIdentity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -47,20 +50,6 @@ namespace ShopAppDll.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "044290b5-2db4-45d5-a798-c37c3f148092",
-                            Name = "Admin",
-                            NormalizedName = "ADMIN"
-                        },
-                        new
-                        {
-                            Id = "f865ff70-1ecf-4f12-8ae8-83ad587829c8",
-                            Name = "User",
-                            NormalizedName = "USER"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -235,40 +224,6 @@ namespace ShopAppDll.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "44b92d0d-6957-4393-984a-a0c0c7cbd804",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "0f573f1c-4bbe-4d60-bf34-7ab0c7e36852",
-                            Email = "admin@example.com",
-                            EmailConfirmed = true,
-                            LockoutEnabled = false,
-                            NormalizedEmail = "ADMIN@EXAMPLE.COM",
-                            NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEOofgTlMIOAxTxgnA5K2lXsnsk1DZkjJk4CAD8ifzxGNXi11aVoWOsU2lCEaiwd1GQ==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "2bee17bf-deb1-46b6-a00d-7dc7cd14bf7f",
-                            TwoFactorEnabled = false,
-                            UserName = "Admin"
-                        },
-                        new
-                        {
-                            Id = "e8cae89b-9de6-4d9e-9e23-a4c38f63649f",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "82a77ffd-89a5-4c60-8409-70f35f1b3d0b",
-                            Email = "user@example.com",
-                            EmailConfirmed = true,
-                            LockoutEnabled = false,
-                            NormalizedEmail = "USER@EXAMPLE.COM",
-                            NormalizedUserName = "USER",
-                            PasswordHash = "AQAAAAIAAYagAAAAEIkBasp/wijp1WEDJ1EgslODS1cSFap3wQusEXFUvAXsFpbQsHD3Zsjd/sEnH4uYfw==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "9287b4f7-94c1-48b1-8647-aa9da5d4e255",
-                            TwoFactorEnabled = false,
-                            UserName = "User"
-                        });
                 });
 
             modelBuilder.Entity("ShopAppDll.Entities.Author", b =>
