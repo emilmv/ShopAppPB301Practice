@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ShopAppPB301Practice.DAL;
@@ -12,6 +12,7 @@ namespace ShopAppPB301Practice.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    //[Authorize(Roles ="Admin")]
     public class GroupController : ControllerBase
     {
         private readonly ShopAppDbContext _context;

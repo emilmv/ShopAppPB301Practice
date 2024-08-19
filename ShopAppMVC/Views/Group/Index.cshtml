@@ -1,0 +1,30 @@
+﻿@using ShopAppMVC.ViewModels
+@model List<GroupReturnVM>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Limit</th>
+            <th scope="col">CreateDate</th>
+            <th scope="col">Students</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var group in Model)
+        {
+            <tr>
+               
+                <td>@group.Name</td>
+                <td>@group.Limit</td>
+                <td>@group.CreateDate</td>
+                <td>
+                    <ul>
+                    @foreach(var student in group.Students)
+                    {
+                        <li>@student.Name</li>
+                    }
+                    </ul>
+                </td>
+            </tr>
+        }
+</table>
