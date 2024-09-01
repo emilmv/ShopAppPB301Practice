@@ -13,21 +13,18 @@ namespace ShopAppMVC.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginVM loginVM)
         {
-            using var client=new HttpClient();
+            using var client = new HttpClient();
             var stringData = JsonConvert.SerializeObject(loginVM);
-            var content=new StringContent(stringData);
-            var response= await client.PostAsync("", content);
+            var content = new StringContent(stringData,System.Text.Encoding.Default,"application/json");
+            var response = await client.PostAsync("", content);
             if (response.IsSuccessStatusCode)
             {
-                var dataFromApi=await response.Content.ReadAsStringAsync();
-                var tokenResponse=JsonConvert.DeserializeObject<TokenResponse>(dataFromApi);
+                var dataFromApi = await response.Content.ReadAsStringAsync();
+                var tokenResponse = JsonConvert.DeserializeObject<TokenResponse>(dataFromApi);
                 Response.Cookies.Append("token", JsonConvert.SerializeObject(tokenResponse));
+                return RedirectToAction("Index", "Home");
             }
-            else
-            {
-                throw new Exception("failed");
-            }
-            return View();
+            throw new Exception("Error..");
         }
     }
 }

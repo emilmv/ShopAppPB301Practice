@@ -7,23 +7,27 @@
             <th scope="col">Limit</th>
             <th scope="col">CreateDate</th>
             <th scope="col">Students</th>
+            <th scope="col">Setting</th>
         </tr>
     </thead>
     <tbody>
-        @foreach(var group in Model)
+        @foreach (var group in Model)
         {
             <tr>
-               
+
                 <td>@group.Name</td>
                 <td>@group.Limit</td>
                 <td>@group.CreateDate</td>
                 <td>
                     <ul>
-                    @foreach(var student in group.Students)
-                    {
-                        <li>@student.Name</li>
-                    }
+                        @foreach (var student in group.Students)
+                        {
+                            <li>@student.Name</li>
+                        }
                     </ul>
+                </td>
+                <td>
+                    <a asp-action="update" asp-route-id="@group.Id">Update</a>
                 </td>
             </tr>
         }
